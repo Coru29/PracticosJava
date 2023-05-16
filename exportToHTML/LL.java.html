@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>LL.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #f8f8f2;}
+.s1 { color: #ff79c6;}
+.s2 { color: #fff906;}
+.s3 { color: #737fff;}
+.s4 { color: #03bb85;}
+.s5 { color: #36ffac;}
+.s6 { color: #f1fa8c;}
+.s7 { color: #bd93f9;}
+</style>
+</head>
+<body bgcolor="#282a36">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+LL.java</font>
+</center></td></tr></table>
+<pre><span class="s0">@Override</span>
+    <span class="s1">public void </span><span class="s0">addInOrder</span><span class="s2">(</span><span class="s1">int </span><span class="s0">value</span><span class="s2">) </span><span class="s3">{</span>
+        <span class="s0">Node tempNode = head;</span>
+
+        <span class="s0">Node nuevoNodo = </span><span class="s1">new </span><span class="s0">Node</span><span class="s2">()</span><span class="s0">;</span>
+        <span class="s0">nuevoNodo.value = value;</span>
+
+        <span class="s1">if </span><span class="s2">(</span><span class="s0">tempNode.value &lt; nuevoNodo.value</span><span class="s2">)</span><span class="s3">{</span>
+            <span class="s0">nuevoNodo.next = tempNode.next;</span>
+            <span class="s0">tempNode.next = nuevoNodo;</span>
+        <span class="s3">}</span>
+        <span class="s1">else</span><span class="s3">{</span>
+            <span class="s1">while </span><span class="s2">(</span><span class="s0">tempNode.next != </span><span class="s1">null</span><span class="s2">)</span><span class="s3">{</span>
+                <span class="s1">if</span><span class="s2">(</span><span class="s0">tempNode.next.value &lt; nuevoNodo.value</span><span class="s2">)</span><span class="s3">{</span>
+                    <span class="s0">tempNode = tempNode.next;</span>
+                <span class="s3">}</span>
+                <span class="s0">tempNode = tempNode.next; </span><span class="s4">// no se si este va, me marie, creo q no</span>
+                <span class="s0">nuevoNodo.next = tempNode.next;</span>
+                <span class="s0">tempNode.next = nuevoNodo;</span>
+            <span class="s3">}</span>
+        <span class="s3">}</span>
+        
+    <span class="s3">}</span></pre>
+</body>
+</html>
